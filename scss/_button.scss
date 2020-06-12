@@ -1,0 +1,22 @@
+// Sharing
+// %[name] --> @extend %[name]
+%btn {
+	display: inline-block;
+	padding: 8px 20px;
+	border-radius: 5px;
+	margin-right: 20px;
+
+	&:hover {
+		transform: scale(.98);
+	}
+}
+
+.btn-primary {
+	@extend %btn;
+	@include set-bg-and-text(lighten($primary-color, 10%));
+}
+
+.btn-secondary {
+	@extend %btn;
+	@include set-bg-and-text($secondary-color);
+}

@@ -1,0 +1,31 @@
+$light-color: #fafafa;
+// $primary-color: #0e6cff;
+// $primary-color: #c2d9fd;
+$primary-color: #41436a;
+$secondary-color: #ff8700;
+$primary-font: Arial, Helvetica, sans-serif;
+
+// Function
+@function set-text-color($bgColor) {
+	@if (lightness($bgColor) > 70) {
+		@return #333;
+	} @else {
+		@return #fff;
+	}
+}
+
+// Mixing
+// @mixing --> @include
+@mixin set-bg-and-text($bgColor) {
+	background-color: $bgColor;
+	color: set-text-color($bgColor);
+}
+
+// Looping
+// $counter : (1,2,3);
+// @each $count in $counter{
+//     .my-#{$count}{
+//         margin: #{$count}rem;
+//         padding: #{$count}rem;
+//     }
+// }
